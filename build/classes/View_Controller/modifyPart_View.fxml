@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ModifyPart_ViewController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="501.0" prefWidth="472.0">
+         <children>
+            <HBox layoutX="7.0" layoutY="8.0" prefHeight="69.0" prefWidth="454.0">
+               <children>
+                  <Label text="Modify Part">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="40.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <RadioButton fx:id="InHouseRadio" mnemonicParsing="false" onAction="#setType" selected="true" text="In-House">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="25.0" />
+                     </HBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="inOut" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="outsourceRadio" mnemonicParsing="false" onAction="#setType" text="Outsourced" toggleGroup="$inOut">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="25.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <VBox layoutX="15.0" layoutY="77.0" prefHeight="366.0" prefWidth="136.0">
+               <children>
+                  <Label text="ID">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Name">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Inv">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Price/Cose">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label text="Max">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="typeText" text="Machine ID">
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="143.0" layoutY="77.0" prefHeight="366.0" prefWidth="146.0">
+               <children>
+                  <TextField fx:id="idField" disable="true" editable="false">
+                     <VBox.margin>
+                        <Insets bottom="7.0" top="15.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="nameField" promptText="Type Name">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="invField" promptText="Type Inventory">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="7.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="priceField" promptText="Type Price">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="7.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="maxField" promptText="Type Max Inv">
+                     <VBox.margin>
+                        <Insets bottom="5.0" right="10.0" top="7.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="machineIdField" promptText="Type Machine ID">
+                     <VBox.margin>
+                        <Insets top="7.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <Label layoutX="289.0" layoutY="242.0" text="Min" />
+            <TextField fx:id="minFeild" layoutX="317.0" layoutY="238.0" prefHeight="25.0" prefWidth="126.0" promptText="Type Min Iinv" />
+            <Label fx:id="errorLabel" layoutX="79.0" layoutY="443.0" text=" " textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Button fx:id="saveButton" layoutX="322.0" layoutY="546.0" mnemonicParsing="false" onAction="#addPart" text="Save" />
+      <Button fx:id="cancelButton" layoutX="385.0" layoutY="546.0" mnemonicParsing="false" onAction="#cancelPart" text="Cancel" />
+   </children>
+</Pane>
